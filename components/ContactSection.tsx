@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { FIRM_INFO } from "@/data/content";
+import { OFFICES } from "@/lib/site";
 
 export default function ContactSection() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -180,9 +181,9 @@ export default function ContactSection() {
                         <p className="font-bold text-white text-sm">Chamber Office (Wave Estate)</p>
                         <span className="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20 font-semibold">Office 1</span>
                       </div>
-                      <p className="mt-1">{FIRM_INFO.office1.line1}</p>
-                      <p>{FIRM_INFO.office1.line2}</p>
-                      <p>{FIRM_INFO.office1.city} ({FIRM_INFO.office1.pin})</p>
+                      <p className="mt-1">{OFFICES.office1.line1}</p>
+                      <p>{OFFICES.office1.line2}</p>
+                      <p>{OFFICES.office1.city} ({OFFICES.office1.pin})</p>
                       <div className="mt-2 flex items-center gap-2">
                         <span className="text-[11px] text-amber-400 font-semibold">Click to view on Map below ↓</span>
                       </div>
@@ -203,9 +204,9 @@ export default function ContactSection() {
                         <p className="font-bold text-white text-sm">Office-cum-Residence (Kharar)</p>
                         <span className="text-[10px] bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20 font-semibold">Office 2</span>
                       </div>
-                      <p className="mt-1">{FIRM_INFO.office2.line1}</p>
-                      <p>{FIRM_INFO.office2.line2}</p>
-                      <p>{FIRM_INFO.office2.city} ({FIRM_INFO.office2.pin})</p>
+                      <p className="mt-1">{OFFICES.office2.line1}</p>
+                      <p>{OFFICES.office2.line2}</p>
+                      <p>{OFFICES.office2.city} ({OFFICES.office2.pin})</p>
                       <div className="mt-2 flex items-center gap-2">
                         <span className="text-[11px] text-amber-400 font-semibold">Click to view on Map below ↓</span>
                       </div>
@@ -285,14 +286,14 @@ export default function ContactSection() {
               <div className="h-64 relative">
                 <iframe
                   title={activeLocation === "office1" ? "Office 1 Wave Estate Mohali" : "Office 2 Silver Enclave Kharar"}
-                  src={activeLocation === "office1" ? FIRM_INFO.office1.mapEmbed : FIRM_INFO.office2.mapEmbed}
+                  src={activeLocation === "office1" ? OFFICES.office1.mapEmbed : OFFICES.office2.mapEmbed}
                   className="w-full h-full border-0 filter grayscale opacity-85 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                   allowFullScreen={false}
                   loading="lazy"
                 ></iframe>
 
                 <div className="absolute bottom-3 left-3 bg-slate-950/90 border border-slate-700 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-amber-400 shadow">
-                  {activeLocation === "office1" ? "KLC, SCO 14, 2nd Floor, Wave Estate Mohali (140308)" : "#529, Silver Enclave, Sector 125 Kharar (140301)"}
+                  {activeLocation === "office1" ? "SCO 14-D, Sector 85, Wave Estate, Mohali (140308)" : "#529, Silver Enclave, Sector 125 Kharar (140301)"}
                 </div>
               </div>
             </div>

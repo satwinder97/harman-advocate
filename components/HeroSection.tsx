@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { FIRM_INFO } from "@/data/content";
+import { OFFICES, ADVOCATE_IMAGE, ADVOCATE_NAME } from "@/lib/site";
 
 interface HeroSectionProps {
   onOpenAppointment: () => void;
@@ -9,6 +10,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onOpenAppointment, onOpenECard }: HeroSectionProps) {
+  const [photoFailed, setPhotoFailed] = useState(false);
   return (
     <section className="relative bg-slate-950 text-white overflow-hidden border-b border-amber-600/20">
       {/* Subtle Background Pattern & Light Effects */}
@@ -111,12 +113,25 @@ export default function HeroSection({ onOpenAppointment, onOpenECard }: HeroSect
           {/* Right Column: Visual Chamber Emblem Card */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md bg-gradient-to-b from-slate-900 to-slate-950 p-8 rounded-2xl border border-amber-500/30 shadow-2xl space-y-6 text-center">
-              {/* Emblem / Scales Symbol */}
-              <div className="mx-auto w-24 h-24 bg-gradient-to-br from-amber-400/20 to-amber-600/10 rounded-full flex items-center justify-center border-2 border-amber-500/50 shadow-inner">
-                <svg className="w-12 h-12 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v18m0-18l-8 4v2a4 4 0 004 4h0a4 4 0 004-4V7m0-4l8 4v2a4 4 0 01-4 4h0a4 4 0 01-4-4V7M4 21h16" />
-                </svg>
-              </div>
+              {/* Advocate Photo (public/images/advocate.jpg) – falls back to emblem if file is missing */}
+              {photoFailed ? (
+                <div className="mx-auto w-24 h-24 bg-gradient-to-br from-amber-400/20 to-amber-600/10 rounded-full flex items-center justify-center border-2 border-amber-500/50 shadow-inner">
+                  <svg className="w-12 h-12 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v18m0-18l-8 4v2a4 4 0 004 4h0a4 4 0 004-4V7m0-4l8 4v2a4 4 0 01-4 4h0a4 4 0 01-4-4V7M4 21h16" />
+                  </svg>
+                </div>
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={ADVOCATE_IMAGE}
+                  alt={`${ADVOCATE_NAME} - Advocate, Punjab & Haryana High Court, Mohali & Chandigarh`}
+                  width={320}
+                  height={320}
+                  fetchPriority="high"
+                  onError={() => setPhotoFailed(true)}
+                  className="mx-auto w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover object-top border-4 border-amber-500/60 shadow-xl shadow-amber-500/10"
+                />
+              )}
 
               <div>
                 <h3 className="text-2xl font-serif font-bold text-white tracking-wide">
@@ -139,7 +154,7 @@ export default function HeroSection({ onOpenAppointment, onOpenECard }: HeroSect
                   </svg>
                   <div>
                     <span className="font-semibold text-white block">Office 1:</span>
-                    <span>{FIRM_INFO.office1.line1}, {FIRM_INFO.office1.line2}, {FIRM_INFO.office1.city} ({FIRM_INFO.office1.pin})</span>
+                    <span>{OFFICES.office1.line1}, {OFFICES.office1.line2}, {OFFICES.office1.city} ({OFFICES.office1.pin})</span>
                   </div>
                 </div>
 
@@ -150,7 +165,7 @@ export default function HeroSection({ onOpenAppointment, onOpenECard }: HeroSect
                   </svg>
                   <div>
                     <span className="font-semibold text-white block">Office-cum-Residence:</span>
-                    <span>{FIRM_INFO.office2.line1}, {FIRM_INFO.office2.line2}, {FIRM_INFO.office2.city} ({FIRM_INFO.office2.pin})</span>
+                    <span>{OFFICES.office2.line1}, {OFFICES.office2.line2}, {OFFICES.office2.city} ({OFFICES.office2.pin})</span>
                   </div>
                 </div>
 

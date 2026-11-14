@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FIRM_INFO } from "@/data/content";
+import { OFFICES } from "@/lib/site";
 
 interface FooterProps {
   onOpenDisclaimer: () => void;
@@ -85,12 +86,12 @@ export default function Footer({ onOpenDisclaimer, onOpenAppointment }: FooterPr
             <div className="text-slate-300 space-y-2 text-xs">
               <div className="border-b border-slate-900 pb-2">
                 <p className="font-semibold text-white">1. Chamber Office (Wave Estate):</p>
-                <p>{FIRM_INFO.office1.line1}, {FIRM_INFO.office1.line2}, {FIRM_INFO.office1.city} ({FIRM_INFO.office1.pin})</p>
+                <p>{OFFICES.office1.line1}, {OFFICES.office1.line2}, {OFFICES.office1.city} ({OFFICES.office1.pin})</p>
               </div>
 
               <div>
                 <p className="font-semibold text-white">2. Office-cum-Residence (Kharar):</p>
-                <p>{FIRM_INFO.office2.line1}, {FIRM_INFO.office2.line2}, {FIRM_INFO.office2.city} ({FIRM_INFO.office2.pin})</p>
+                <p>{OFFICES.office2.line1}, {OFFICES.office2.line2}, {OFFICES.office2.city} ({OFFICES.office2.pin})</p>
               </div>
 
               <div className="pt-1 text-slate-400 space-y-0.5">

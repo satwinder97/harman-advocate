@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { FIRM_INFO } from "@/data/content";
+import { OFFICES } from "@/lib/site";
 
 interface ECardModalProps {
   isOpen: boolean;
@@ -29,7 +30,7 @@ ORG:Adv. Harmanjeet Singh Saini Law Chamber
 TITLE:Advocate | Member of Punjab & Haryana Bar
 TEL;TYPE=CELL:${FIRM_INFO.phone}
 EMAIL:${FIRM_INFO.email}
-ADR;TYPE=WORK:;;KLC, SCO 14, 2nd Floor, Sector - 85, Wave Estate;Mohali;Punjab;140308;India
+ADR;TYPE=WORK:;;SCO 14-D, Sector 85, Wave Estate;Mohali;Punjab;140308;India
 ADR;TYPE=HOME:;;#529, Silver Enclave, Sector 125;Kharar;Punjab;140301;India
 NOTE:Corporate & Civil | Criminal & Divorce Lawyer | Punjab & Haryana High Court
 END:VCARD`;
@@ -108,14 +109,14 @@ END:VCARD`;
                 <svg className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
-                <span><strong>Office 1:</strong> {FIRM_INFO.office1.line1}, {FIRM_INFO.office1.line2}, {FIRM_INFO.office1.city} ({FIRM_INFO.office1.pin})</span>
+                <span><strong>Office 1:</strong> {OFFICES.office1.line1}, {OFFICES.office1.line2}, {OFFICES.office1.city} ({OFFICES.office1.pin})</span>
               </p>
 
               <p className="flex items-start gap-2">
                 <svg className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
-                <span><strong>Office 2:</strong> {FIRM_INFO.office2.line1}, {FIRM_INFO.office2.line2}, {FIRM_INFO.office2.city} ({FIRM_INFO.office2.pin})</span>
+                <span><strong>Office 2:</strong> {OFFICES.office2.line1}, {OFFICES.office2.line2}, {OFFICES.office2.city} ({OFFICES.office2.pin})</span>
               </p>
             </div>
           </div>
