@@ -5,21 +5,8 @@ import { FIRM_INFO } from "@/data/content";
 import { OFFICES } from "@/lib/site";
 
 export default function ContactSection() {
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [payModalOpen, setPayModalOpen] = useState(false);
   const [activeLocation, setActiveLocation] = useState<"office1" | "office2">("office1");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    option: "Stay Matters & Injunctions",
-    message: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-  };
 
   return (
     <section id="contact" className="py-20 bg-slate-950 text-white relative">
@@ -36,124 +23,14 @@ export default function ContactSection() {
             GET IN <span className="text-amber-400">TOUCH</span>
           </h2>
           <p className="text-slate-400 text-sm">
-            Visit our Chamber Office at Wave Estate Mohali or Office-cum-Residence at Kharar, or schedule a consultation.
+            Visit our Chamber Office at Wave Estate Mohali or Office-cum-Residence at Kharar, or book an appointment.
           </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
-          {/* Left Column: Interactive Contact Form */}
-          <div className="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
-            <h3 className="text-xl font-serif font-bold text-white flex items-center gap-2">
-              <span className="text-amber-400">Send A Direct Inquiry</span>
-            </h3>
-
-            {formSubmitted ? (
-              <div className="bg-emerald-500/10 border border-emerald-500/30 p-6 rounded-2xl text-center space-y-3">
-                <div className="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white">Thanks for submitting!</h4>
-                <p className="text-xs text-slate-300">
-                  Your inquiry has been received by Adv. Harmanjeet Singh Saini&apos;s chamber. We will get back to you shortly.
-                </p>
-                <button
-                  onClick={() => setFormSubmitted(false)}
-                  className="mt-2 text-xs font-semibold text-amber-400 underline hover:text-amber-300"
-                >
-                  Send another message
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Name *</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Your Full Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Email *</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="your.email@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Phone Number *</label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 95929 21930"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Matter / Legal Case Type *</label>
-                  <select
-                    value={formData.option}
-                    onChange={(e) => setFormData({ ...formData, option: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-amber-400"
-                  >
-                    <option value="Stay Matters & Injunctions">Stay Matters & Injunctions</option>
-                    <option value="Cheque Bounce (138 NI Act)">Cheque Bounce (138 NI Act)</option>
-                    <option value="Regular & Anticipatory Bails">Regular & Anticipatory Bails</option>
-                    <option value="Criminal Trial Defense">Criminal Trial Defense</option>
-                    <option value="Revision & Appeals">Revision & Appeals</option>
-                    <option value="Divorce Cases & Matrimonial Law">Divorce Cases & Matrimonial Law</option>
-                    <option value="Maintenance & Domestic Violence Cases">Maintenance & Domestic Violence Cases</option>
-                    <option value="Dowry Matters (498-A IPC)">Dowry Matters (498-A IPC)</option>
-                    <option value="FIR Quashing">FIR Quashing</option>
-                    <option value="Suspension & Remission of Sentences">Suspension & Remission of Sentences</option>
-                    <option value="Direction Petitions">Direction Petitions</option>
-                    <option value="Contract Drafting & Corporate Meetings">Contract Drafting & Corporate Meetings</option>
-                    <option value="Arbitration & Dispute Resolution">Arbitration & Dispute Resolution</option>
-                    <option value="Corporate & Civil Litigation">Corporate & Civil Litigation</option>
-                    <option value="General Legal Consultation">General Legal Consultation</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Case Facts / Inquiries</label>
-                  <textarea
-                    rows={4}
-                    placeholder="Briefly state your case facts, court location, or legal dispute..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider shadow-lg transition-transform hover:scale-[1.01]"
-                >
-                  Submit Inquiry
-                </button>
-              </form>
-            )}
-          </div>
-
           {/* Right Column: Office Address, Map & Payment */}
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-12 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
             
             {/* Address Card */}
             <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl">

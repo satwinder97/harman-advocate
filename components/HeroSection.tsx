@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FIRM_INFO } from "@/data/content";
-import { OFFICES, ADVOCATE_IMAGE, ADVOCATE_NAME } from "@/lib/site";
+import { OFFICES, ADVOCATE_IMAGE, ADVOCATE_NAME, WHATSAPP_MESSAGE } from "@/lib/site";
 
 interface HeroSectionProps {
   onOpenAppointment: () => void;
@@ -113,7 +113,7 @@ export default function HeroSection({ onOpenAppointment, onOpenECard }: HeroSect
           {/* Right Column: Visual Chamber Emblem Card */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-md bg-gradient-to-b from-slate-900 to-slate-950 p-8 rounded-2xl border border-amber-500/30 shadow-2xl space-y-6 text-center">
-              {/* Advocate Photo (public/images/advocate.jpg) – falls back to emblem if file is missing */}
+              {/* Advocate photo (public/images/advocate.jpg); falls back to the emblem if the file is missing */}
               {photoFailed ? (
                 <div className="mx-auto w-24 h-24 bg-gradient-to-br from-amber-400/20 to-amber-600/10 rounded-full flex items-center justify-center border-2 border-amber-500/50 shadow-inner">
                   <svg className="w-12 h-12 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ export default function HeroSection({ onOpenAppointment, onOpenECard }: HeroSect
 
               <div className="pt-2">
                 <a
-                  href={`https://wa.me/${FIRM_INFO.whatsapp}?text=Hello%20Adv.%20Harmanjeet%20Singh%20Saini,%20I%20need%20legal%20consultation.`}
+                  href={`https://wa.me/${FIRM_INFO.whatsapp}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 shadow transition-colors"

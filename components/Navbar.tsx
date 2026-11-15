@@ -75,9 +75,9 @@ export default function Navbar({ onOpenAppointment, onOpenECard, onOpenDisclaime
           </div>
 
           <div>
-            <div className="text-lg sm:text-xl font-serif font-bold tracking-tight text-white flex items-center gap-1.5">
-              <span>ADV. HARMANJEET SINGH</span>
-              <span className="text-amber-400 font-sans font-semibold">SAINI</span>
+            <div className="text-lg sm:text-xl font-serif font-bold tracking-tight text-white flex flex-wrap items-baseline gap-x-1.5 leading-tight">
+              <span className="whitespace-nowrap">ADV. HARMANJEET</span>
+              <span className="whitespace-nowrap">SINGH <span className="text-amber-400 font-sans font-semibold">SAINI</span></span>
             </div>
             <p className="text-[10px] sm:text-xs text-amber-300/80 tracking-widest uppercase font-medium">
               Advocate | Corporate, Civil, Criminal & Divorce Lawyer

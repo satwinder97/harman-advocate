@@ -1,5 +1,5 @@
 // Single source of truth for address + SEO data.
-// Address yahin se change karo – Footer, Hero, Contact, e-card, map aur Google (JSON-LD) sab yahin se lete hain.
+// Change the address here only - Footer, Hero, Contact, e-card, map and Google (JSON-LD) all read from this file.
 
 export const SITE_URL = "https://adv.hssaini.in";
 export const ADVOCATE_NAME = "Adv. Harmanjeet Singh Saini";
@@ -35,3 +35,10 @@ export const OFFICES = {
 
 export const OFFICE1_FULL = "SCO 14-D, Sector 85, Wave Estate, Mohali, Punjab 140308";
 export const OFFICE2_FULL = "#529, Silver Enclave, Sector 125, Kharar, Mohali, Punjab 140301";
+
+// Pre-filled WhatsApp message. Edit it here.
+export const WHATSAPP_MESSAGE = `Dear Advocate Harmanjeet Singh Saini,
+
+I would like to seek your legal consultation regarding a matter. Kindly let me know a convenient time to discuss the details.
+
+Thank you.`;

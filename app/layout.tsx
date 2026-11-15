@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [ADVOCATE_IMAGE] },
   icons: { icon: "/favicon.ico" },
-  // Google Search Console verification: token yaha paste karo (agar HTML-tag method use karo)
+  // Google Search Console verification: paste the token here if using the HTML-tag method
   // verification: { google: "YOUR_TOKEN" },
   other: {
     "geo.region": "IN-PB",
