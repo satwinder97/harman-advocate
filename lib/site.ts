@@ -42,3 +42,10 @@ export const WHATSAPP_MESSAGE = `Dear Advocate Harmanjeet Singh Saini,
 I would like to seek your legal consultation regarding a matter. Kindly let me know a convenient time to discuss the details.
 
 Thank you.`;
+
+// Pre-filled message for the "Book An Appointment" buttons.
+export const APPOINTMENT_MESSAGE = `Dear Advocate Harmanjeet Singh Saini,
+
+I would like to book an appointment for a legal consultation. Kindly let me know your available date and time.
+
+Thank you.`;
